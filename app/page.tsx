@@ -82,10 +82,8 @@ export default function PlaygroundChatbot() {
     }
   }, [messages]);
 
-  // Clear chat and uploaded files on tab close/reload
-  // ...existing code...
 
-// Update the useEffect hook that handles cleanup
+
 useEffect(() => {
   const handleCleanup = async () => {
     console.debug('[Cleanup] Starting cleanup on page refresh/unload');
@@ -136,6 +134,7 @@ useEffect(() => {
   // Cleanup event listener on component unmount
   return () => window.removeEventListener("beforeunload", handleCleanup);
 }, []); // Empty dependency array means this runs once on mount
+
 
 
 
